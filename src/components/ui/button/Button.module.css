@@ -1,0 +1,14 @@
+.btn {
+  font-size: var(--fs-body);
+  align-items: center;
+}
+
+.primary {
+  padding: var(--space-sm) var(--space-md);
+  color: white;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}

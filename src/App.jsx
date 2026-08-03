@@ -11,10 +11,11 @@ import About from "./pages/About/About";
 export default function App() {
   return (
     <Routes>
-      <Route element={<MainLayout />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/game" element={<Game />} />
-      <Route path="/about" element={<About />} />
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
+        <Route path="/about" element={<About />} />
+      </Route>
     </Routes>
   );
 }
