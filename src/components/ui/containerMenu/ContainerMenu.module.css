@@ -1,0 +1,12 @@
+.primary {
+  position: relative;
+  width: clamp(350px, 50vw, 700px);
+  margin: 4rem auto;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.35));
+}

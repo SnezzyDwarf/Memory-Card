@@ -7,7 +7,7 @@
 }
 
 .logo {
-  width: 50%;
+  width: clamp(180px, 12vw, 260px);
   height: auto;
   object-fit: contain;
   transform: rotate(-20deg);
@@ -16,16 +16,14 @@
 .left,
 .right,
 .center {
-  width: 100%;
   display: flex;
-  height: auto;
+  flex: 1;
+  align-items: center;
 }
 
 .center {
-  padding: var(--space-md);
-  align-self: flex-start;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .right {
@@ -40,4 +38,11 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+}
+
+.book {
+  width: clamp(70px, 6vw, 100px);
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
 }

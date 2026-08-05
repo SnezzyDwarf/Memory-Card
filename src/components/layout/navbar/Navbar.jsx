@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom";
-import Button from "../../ui/button/Button";
 
 //images
 import Logo from "../../../assets/img/LogoMemoryCard.png";
+import BookClose from "../../../assets/img/Book_about.png";
+import BookOpen from "../../../assets/img/Book_About_Open.png";
 
 //css
 import styles from "./Navbar.module.css";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <nav className={styles.navbar}>
       <div className={styles.left}>
@@ -18,7 +21,13 @@ export default function Navbar() {
 
       <div className={styles.center}>
         <NavLink to={"about"}>
-          <Button>Rules</Button>
+          <img
+            src={isHovered ? `${BookOpen}` : `${BookClose}`}
+            alt={isHovered ? `Magic Book Open` : `Magic Book Closed`}
+            onMouseEnter={() => setIsHovered((prev) => !prev)}
+            onMouseLeave={() => setIsHovered((prev) => !prev)}
+            className={styles.book}
+          />
         </NavLink>
       </div>
 
