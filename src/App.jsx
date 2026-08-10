@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import "../src/services/giphy";
+import "../src/services/dataEasy";
 
 //Layouts
 import MainLayout from "./layouts/MainLayout";

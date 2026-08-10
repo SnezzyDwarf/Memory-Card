@@ -9,8 +9,9 @@ import BookOpen from "../../../assets/img/Book_About_Open.png";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ highScore }) {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.left}>
@@ -33,9 +34,9 @@ export default function Navbar() {
 
       <div className={styles.right}>
         <div className={styles.score}>
-          <h3>High Score:</h3>
+          <h3>Hig Score:</h3>
 
-          <h3>0</h3>
+          <h3>{highScore}</h3>
         </div>
       </div>
     </nav>

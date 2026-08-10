@@ -1,70 +1,57 @@
-import { useEffect, useState } from "react";
-import { fetchData } from "../../services/giphy";
+import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
+
+import GameEasy from "./GameEasy/GameEasy";
 
 export default function Game() {
-  //Load Cards API state= fake API
-  const [cardList, setCardList] = useState([]);
-
   //Save user selected cards
   const [selectCards, setSelectedCards] = useState([]);
 
   //State counter
   const [score, setIsScore] = useState(0);
 
-  //Load data asyncronous
-  useEffect(() => {
-    async function loadCardsList() {
-      const result = await fetchData("/cards");
-      const slice = result
-        .map((card) => ({ card, random: Math.random() }))
-        .sort((a, b) => a.random - b.random)
-        .map((obj) => obj.card)
-        .slice(0, 4);
-
-      setCardList(slice);
-    }
-    loadCardsList();
-  }, [selectCards]);
-
+  // Finding the selected card whit find and the id
   function findSelectedCard(id) {
     return selectCards.find((card) => card === id);
   }
 
-  //handler
+  const { handleScore } = useOutletContext();
+
+  //handler the user Click
   function handlerClick(id) {
-    //count + 1 number of wins
-    setIsScore((prev) => prev + 1);
-    setSelectedCards((prev) => {
-      //handles loss
-      const result = findSelectedCard(id);
+    // Result will be equalt to findSelectCard i use id as paramater
+    const result = findSelectedCard(id);
+    if (result !== undefined) {
+      alert("You loose");
+      setIsScore(0);
+      setSelectedCards([]);
+      return;
+    }
 
-      if (result !== undefined) {
-        alert("You loose");
-        setIsScore(0);
-        return [];
-      }
+    const newCards = [...selectCards, id];
 
-      //handles win
-      const newCards = [...prev, id];
-      if (newCards.length === 4) {
-        alert(`You win`);
-        return [];
-      }
+    // WIN
+    if (newCards.length === 4) {
+      alert("You win");
+      setIsScore((prev) => prev + 1);
+      handleScore();
+      setSelectedCards([]);
+      return;
+    }
 
-      return newCards;
-    });
+    // Continua a ronda
+    setSelectedCards(newCards);
   }
 
   return (
     <>
-      <div>
-        <h2>{score}</h2>
-      </div>
-      {cardList.map((card) => (
-        <div key={card.id}>
-          <button onClick={() => handlerClick(card.id)}>{card.name}</button>
-        </div>
-      ))}
+      <section>
+        <GameEasy
+          handlerClick={handlerClick}
+          score={score}
+          selectCards={selectCards}
+        />
+      </section>
     </>
   );
 }
