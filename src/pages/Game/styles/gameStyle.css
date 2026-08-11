@@ -29,16 +29,35 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-lg);
-
   width: 100%;
   max-width: 1200px;
-  padding: 5rem 3rem;
+  padding: 1rem 3rem;
   margin: 0 auto;
 }
 
 .container-game-cards {
   width: 100%;
   height: auto;
+}
+
+/*============= container 6 *===========*/
+
+.container-game6 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 1200px;
+  padding: 5rem 3rem;
+  margin: 0 auto;
+}
+
+.container-game_cards6:nth-child(5) {
+  grid-column: 2;
+}
+
+.container-game_cards6:nth-child(6) {
+  grid-column: 3;
 }
 
 .container-game_cards-button {

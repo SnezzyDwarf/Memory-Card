@@ -22,8 +22,9 @@ export default function MainMenu() {
           <NavLink to={"/choose"}>
             <h2>New Game</h2>
           </NavLink>
-          <h2>Scores</h2>
-          <h2>Options</h2>
+          <NavLink to={"/about"}>
+            <h2>How to Play</h2>
+          </NavLink>
         </div>
       </ContainerMenu>
     </section>

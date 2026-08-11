@@ -22,11 +22,15 @@ export default function MainMenu() {
               <h2>Choose your dificult</h2>
             </div>
             <div className={styles.text}>
-              <NavLink to={"/game"}>
+              <NavLink to={"/game"} state={{ difficulty: "easy" }}>
                 <h2>Easy</h2>
               </NavLink>
-              <h2>Medium</h2>
-              <h2>Hard</h2>
+              <NavLink to={"/game"} state={{ difficulty: "medium" }}>
+                <h2>Medium</h2>
+              </NavLink>
+              <NavLink to={"/game"} state={{ difficulty: "hard" }}>
+                <h2>Hard</h2>
+              </NavLink>
             </div>
           </div>
         </ContainerMenu>

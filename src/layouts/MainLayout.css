@@ -1,0 +1,17 @@
+.main-layout {
+  background-image: url("../assets/img/trueBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout main {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+  display: flex;
+}

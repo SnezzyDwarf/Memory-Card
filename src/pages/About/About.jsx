@@ -1,7 +1,9 @@
+import AboutMenu from "../../components/aboutMenu/AboutMenu";
+
 export default function About() {
   return (
     <>
-      <h1>About</h1>
+      <AboutMenu />
     </>
   );
 }

@@ -34,7 +34,7 @@ export default function Navbar({ highScore }) {
 
       <div className={styles.right}>
         <div className={styles.score}>
-          <h3>Hig Score:</h3>
+          <h3>High Score:</h3>
 
           <h3>{highScore}</h3>
         </div>

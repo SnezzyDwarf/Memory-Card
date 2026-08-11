@@ -1,16 +1,9 @@
 .navbar {
   display: flex;
-  align-items: center;
-
-  height: auto;
-  padding: var(--space-md);
-}
-
-.logo {
-  width: clamp(180px, 12vw, 260px);
-  height: auto;
-  object-fit: contain;
-  transform: rotate(-20deg);
+  height: 140px;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
 }
 
 .left,
@@ -21,16 +14,25 @@
   align-items: center;
 }
 
+.left {
+  padding-left: var(--space-md);
+}
+
 .center {
-  align-items: center;
   justify-content: center;
 }
 
 .right {
   padding: var(--space-md);
-  align-self: flex-start;
   justify-content: flex-end;
-  align-items: center;
+}
+
+.logo {
+  width: clamp(150px, 10vw, 210px);
+  height: auto;
+  object-fit: contain;
+  transform: rotate(-20deg);
+  transition: all 0.25s ease;
 }
 
 .score {
@@ -41,8 +43,12 @@
 }
 
 .book {
-  width: clamp(70px, 6vw, 100px);
+  width: clamp(60px, 5vw, 85px);
   height: auto;
   object-fit: contain;
   cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
