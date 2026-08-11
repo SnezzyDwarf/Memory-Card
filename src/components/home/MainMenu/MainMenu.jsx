@@ -7,7 +7,7 @@ import styles from "./MainMenu.module.css";
 import Parchment from "../../../assets/img/Parchment.png";
 
 //components
-import ContainerMenu from "../../ui/containerMenu/containerMenu";
+import ContainerMenu from "../../ui/containerMenu/ContainerMenu";
 
 export default function MainMenu() {
   return (

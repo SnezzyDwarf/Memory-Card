@@ -1,4 +1,4 @@
-import ContainerMenu from "../../ui/containerMenu/containerMenu";
+import ContainerMenu from "../../ui/containerMenu/ContainerMenu";
 
 //images
 import Parchment from "../../../assets/img/Parchment.png";
